@@ -1,0 +1,18 @@
+	var result = {};
+	result.status = "SUCCESS";
+	var filterViews = Ext.ComponentQuery.query('filterView');
+	filterViews[0].expand();
+	var filterView = filterViews[0];
+	var filterLbl = ':AUTOCOMPLETER_LBL';
+	var element = filterView.down('label[text='+filterLbl+']');
+	var autocompleter = element.nextSibling('AutoCompleter');
+	if(autocompleter == null || autocompleter == undefined){
+		throw "Element Not Found";
+	}
+	autocompleter.focus();
+	autocompleter.setValue(":AUTOCOMPLETER_VALUE%");
+	autocompleter.fireEvent('keyup', autocompleter, {keyCode: 53});
+	autocompleter.getStore().on('load', function(){
+		autocompleter.fireEvent('select', autocompleter, autocompleter.getStore().getAt(0), 0);
+	});
+	return result;

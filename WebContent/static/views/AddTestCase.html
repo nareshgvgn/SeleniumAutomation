@@ -1,0 +1,48 @@
+<form>
+
+	<div class="form-group">
+
+		<label class="">Test Case ID</label> <input type="text"
+			class="form-control" ng-model="testCaseInfo.testCaseId" />
+
+	</div>
+	<div class="form-group">
+
+		<label class="">Project</label> <select
+			class="form-control" ng-model="testCaseInfo.projectId" >
+				<option ng-repeat="x in projectList" value="{{x.value}}">{{x.description}}</option>
+			</select>
+
+	</div>
+	<div class="form-group">
+
+		<label class="">Component</label> <input type="text"
+			class="form-control" ng-model="testCaseInfo.moduleName" />
+
+	</div>
+
+	<div class="form-group">
+
+		<label class="">Title</label> <input type="text" class="form-control"
+			ng-model="testCaseInfo.testCaseTitle" />
+
+	</div>
+
+	<div class="form-group">
+
+		<label class="">Description</label> <input type="text"
+			class="form-control" ng-model="testCaseInfo.testcaseDescription" />
+
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-6 col-sm-offset-2">
+			<button type="button" class="btn btn-success" ng-show="testCaseInfo.recordId == null"
+				ng-click="addTestCase()">Save Test Case</button>
+			
+			<button type="button" class="btn btn-success" ng-show="testCaseInfo.recordId != null"
+				ng-click="updateTestCase()">Update Test Case</button>
+		</div>
+	</div>
+
+</form>

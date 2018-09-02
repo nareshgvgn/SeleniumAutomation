@@ -1,0 +1,11 @@
+	var gridArray = Ext.ComponentQuery.query('smartgrid');
+	var grid = gridArray[0];
+	var columnLabel = 'Profile Name';
+	var colItem = grid.down('gridcolumn[text='+columnLabel+']');
+	var gridData = grid.store.data.items;
+	var resultArray = new Array();
+	for(var i = 0;i < gridData.length; i++)
+	{
+		resultArray.push(gridData[i].data[colItem.dataIndex]); 
+	}
+	return resultArray;

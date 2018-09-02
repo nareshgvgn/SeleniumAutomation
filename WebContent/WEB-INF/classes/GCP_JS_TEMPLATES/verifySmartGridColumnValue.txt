@@ -1,0 +1,8 @@
+	var gridArray = Ext.ComponentQuery.query('smartgrid');
+	var grid = gridArray[0];
+	var columnLabel = ':COLUMN_LABEL';
+	var colItem = grid.down('gridcolumn[text='+columnLabel+']');
+	var gridData = grid.store.data.items;
+	var colValue = gridData[0].data[colItem.dataIndex];
+	var compareToValue = ':COLUMN_VALUE';
+	return compareToValue == colValue;

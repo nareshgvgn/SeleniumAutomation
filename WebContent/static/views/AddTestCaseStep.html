@@ -1,0 +1,63 @@
+<form>
+	<div class="form-group">
+
+		<label class="">Test Case Step ID</label> <input type="text"
+			class="form-control" ng-model="testStepInfo.testStepId" />
+
+	</div>
+	<div class="form-group">
+
+		<label class="">Sequence No</label> <input type="text"
+			class="form-control" ng-model="testStepInfo.sequenceNo" />
+
+	</div>
+	<div class="form-group">
+
+		<label class="">Keyword</label> <select class="form-control"
+			ng-model="testStepInfo.keyword">
+			<option value="">Select keyword</option>
+			<option ng-repeat="x in keywords" value="{{x.value}}">{{x.description}}</option>
+		</select>
+
+	</div>
+
+	<div class="form-group">
+
+		<label class="">Description</label> <input type="text"
+			class="form-control" ng-model="testStepInfo.description" />
+
+	</div>
+
+	<div class="form-group">
+
+		<label class="">Object Name</label> <input type="text"
+			class="form-control" ng-model="testStepInfo.objectName" />
+
+	</div>
+
+	<div class="form-group">
+
+		<label class="">Object Type</label> <select class="form-control"
+			ng-model="testStepInfo.objectType">
+			<option ng-repeat="x in objectTypes" value="{{x.value}}">{{x.description}}</option>
+		</select>
+
+	</div>
+
+	<div class="form-group">
+
+		<label class="">Input Data</label> <input type="text"
+			class="form-control" ng-model="testStepInfo.inputData" />
+
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-6 col-sm-offset-2">
+			<button type="button" class="btn btn-success" ng-show="testStepInfo.recordId == null"
+				ng-click="addTestCaseStep()">Save Test Case Step</button>
+			<button type="button" class="btn btn-success" ng-show="testStepInfo.recordId != null"
+				ng-click="updateTestCaseStep()">Update Test Case Step</button>
+		</div>
+	</div>
+
+</form>
